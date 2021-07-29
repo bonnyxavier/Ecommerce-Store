@@ -9,13 +9,30 @@ import SignUp from './components/SignUp';
 import MensCategory from './components/MensCategory';
 import WomensCategory from './components/WomensCategory';
 import Wishlisted from './components/Wishlisted';
+import Popup from './components/Popup';
+import { useState, useEffect } from 'react'
 
 function App() {
+
+  const [timedPopup, setTimedPopup] = useState(false);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setTimedPopup(true)
+    },3000)
+  },[])
+
   return (
     
     <div className="App">
       <Router>
         <Header />
+        <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
+          <br></br>
+          <h2>HUGE SALE!!!</h2>
+          <h3>STOREWIDE 50% OFF!!!</h3>
+        </Popup>
+        
         <Switch>
           <Route path="/" exact component = {Home}></Route>
           <Route path= "/product/:productId" exact component={ProductDetail}></Route>
@@ -26,8 +43,11 @@ function App() {
           <Route path="/categories/womens" exact component = {WomensCategory}></Route>
           <Route path="/wishlist" exact component = {Wishlisted}></Route>
           <Route>404 Not Found</Route>
+          
         </Switch>
       </Router>
+      
+      
     </div>
   );
 }
