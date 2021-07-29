@@ -8,6 +8,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import MensCategory from './components/MensCategory';
 import WomensCategory from './components/WomensCategory';
+import Wishlisted from './components/Wishlisted';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/signup" exact component = {SignUp}></Route>
           <Route path="/categories/mens" exact component = {MensCategory}></Route>
           <Route path="/categories/womens" exact component = {WomensCategory}></Route>
+          <Route path="/wishlist" exact component = {Wishlisted}></Route>
           <Route>404 Not Found</Route>
         </Switch>
       </Router>

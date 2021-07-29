@@ -1,12 +1,20 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
+import { addToWishlist } from '../redux/Wishlist/wishlist.actions'
 
 function ProductComponent() {
-
+    const dispatch =  useDispatch()
     const products = useSelector((state)=>state.allProducts.products)
     const productListDisplay = products.map((product)=>{
+        
         const {id,title, image, price, category} = product;
+        
+        const addToWishList = ()=>{
+            if(!product) return;
+            dispatch(addToWishlist(product))
+        }
+
         return(
             
             <div className = "product-container" key={id}>
@@ -23,8 +31,12 @@ function ProductComponent() {
                 </ul>
                     
                 </div>
+                
             
                 </Link>
+                <div>
+                    <button onClick={addToWishList}>Wishlist</button>
+                </div>
                 </div>
             </div>
         )

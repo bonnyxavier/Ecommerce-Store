@@ -11,6 +11,7 @@ function Header() {
                 <Link to="/categories/womens" style={{ textDecoration: 'none' }}><li className="navbar-li">Womens's</li></Link>
                 <Link to="/signup" style={{ textDecoration: 'none' }}><li className="navbar-li login">Login/Register</li></Link>
                 <Link to="/cart" style={{ textDecoration: 'none' }}><li className="navbar-li cart">My Cart</li></Link>
+                <Link to="/wishlist" style={{ textDecoration: 'none' }}><li className="navbar-li cart">Wishlist</li></Link>
             </ul>
             
         </div>
