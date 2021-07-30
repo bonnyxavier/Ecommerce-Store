@@ -6,11 +6,12 @@ import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-import MensCategory from './components/MensCategory';
-import WomensCategory from './components/WomensCategory';
+import MensCategory from './components/Categories/MensCategory';
+import WomensCategory from './components/Categories/WomensCategory';
 import Wishlisted from './components/Wishlisted';
-import Popup from './components/Popup';
+import Popup from './components/Popup/Popup';
 import { useState, useEffect } from 'react'
+import Navbar from './components/NavbarComponents/Navbar';
 
 function App() {
 
@@ -26,7 +27,8 @@ function App() {
     
     <div className="App">
       <Router>
-        <Header />
+        <Navbar />
+        {/* <Header /> */}
         <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
           <br></br>
           <h2>HUGE SALE!!!</h2>
