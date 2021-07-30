@@ -25,7 +25,7 @@ function Home() {
     },[])
 
     return (
-        <div>
+        <div className="all-product-container">
             <ProductComponent></ProductComponent>
         </div>
     )

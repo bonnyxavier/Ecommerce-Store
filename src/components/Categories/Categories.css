@@ -1,0 +1,19 @@
+.category-container{
+    display: flex;
+    
+
+}
+
+.filter-panel{
+    background-color: dodgerblue;
+    color: white;
+    border-top: white 2px solid;
+    width: 15%;
+    border-right: dodgerblue 1px solid;
+    padding: 16px;
+    font-size: 20px;
+}
+
+.category-display-panel{
+    width: 100%;
+}

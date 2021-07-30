@@ -35,7 +35,7 @@ function ProductComponent() {
             
                 </Link>
                 <div>
-                    <button onClick={addToWishList}>Wishlist</button>
+                    <button className="wishListBtn" onClick={addToWishList}>Wishlist</button>
                 </div>
                 </div>
             </div>
