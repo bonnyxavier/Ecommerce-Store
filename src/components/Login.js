@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 function Login() {
-
+    const updatedStatus = useSelector((state)=>state.loginStatusReducer)
+    const [loginStatus, setLoginStatus] = useState(false)
     const [loginUser, setLoginUser] = useState({
         email:"",
         password:"",
@@ -17,13 +18,20 @@ function Login() {
     }
 
     const userDetails = useSelector((state)=>state.userReducer.users)
+
+    const dispatch = useDispatch()
+
     
 
     const handleSubmit = (e) =>{
+        e.preventDefault()
         console.log(userDetails)
 
         if(loginUser.email == userDetails.email && loginUser.password == userDetails.password){
-            alert("login success")
+            alert("login success, you now have access to your wishlist")
+            setLoginStatus(true)
+            dispatch(setLoginStatus(loginStatus))
+            console.log(`Updated Status: ${updatedStatus}`)
         }
         else{
             alert('incorrect details')
@@ -33,7 +41,7 @@ function Login() {
 
     return (
         <div>
-        <form onSubmit = {handleSubmit}>
+        <form onSubmit = {handleSubmit} >
             <div className = "form-control">
                
                 <label>Email</label>

@@ -14,16 +14,21 @@ import { useState, useEffect } from 'react'
 import Navbar from './components/NavbarComponents/Navbar';
 import Test from './components/Test';
 import Checkout from './components/Checkout';
+import ProtectedRoute from './components/ProtectedRoute';
+import NotLoggedIn from './components/NotLoggedIn';
+import {useSelector} from 'react-redux'
 
 function App() {
 
   const [timedPopup, setTimedPopup] = useState(false);
+  const loginStatus = useSelector((state)=>state.loginStatusReducer)
+  console.log(loginStatus)
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      setTimedPopup(true)
-    },3000)
-  },[])
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     setTimedPopup(true)
+  //   },3000)
+  // },[])
 
   return (
     
@@ -45,12 +50,16 @@ function App() {
           <Route path="/signup" exact component = {SignUp}></Route>
           <Route path="/categories/mens" exact component = {MensCategory}></Route>
           <Route path="/categories/womens" exact component = {WomensCategory}></Route>
-          <Route path="/wishlist" exact component = {Wishlisted}></Route>
+          {/* <Route path="/wishlist" exact component = {Wishlisted}></Route> */}
           <Route path="/test" exact component = {Test}></Route>
           <Route path="/checkout" exact component = {Checkout}></Route>
+          <Route path="/noaccess" exact component = {NotLoggedIn}></Route>
+          <ProtectedRoute path="/wishlsit" component={Wishlisted} isAuth={loginStatus}></ProtectedRoute>
           <Route>404 Not Found</Route>
-          
+
         </Switch>
+
+        
       </Router>
       
       
