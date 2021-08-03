@@ -12,6 +12,7 @@ import Wishlisted from './components/Wishlisted';
 import Popup from './components/Popup/Popup';
 import { useState, useEffect } from 'react'
 import Navbar from './components/NavbarComponents/Navbar';
+import Test from './components/Test';
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
           <Route path="/categories/mens" exact component = {MensCategory}></Route>
           <Route path="/categories/womens" exact component = {WomensCategory}></Route>
           <Route path="/wishlist" exact component = {Wishlisted}></Route>
+          <Route path="/test" exact component = {Test}></Route>
           <Route>404 Not Found</Route>
           
         </Switch>

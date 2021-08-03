@@ -65,6 +65,12 @@ function Navbar() {
                         Wishlist<i class="fas fa-heart"></i>
                     </Link>
                 </li>
+
+                <li className='nav-item'>
+                    <Link to='/test' className="nav-links" onClick={closeMobileMenu}>
+                        Test
+                    </Link>
+                </li>
             </ul>
             <Button></Button>
     
