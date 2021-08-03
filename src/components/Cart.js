@@ -1,5 +1,6 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function Cart() {
 
@@ -35,10 +36,13 @@ return (
       <div>
         {productListDisplay}
       </div>
-      <div>
+     
+      <Link to='/checkout'>  
+       <div>
       <button className="checkOutBtn" onClick={()=>alert('Please proceed to payment...')}>Checkout</button> 
-      </div>
-        
+      </div> 
+      </Link>
+    
     </div>
 )
 }
