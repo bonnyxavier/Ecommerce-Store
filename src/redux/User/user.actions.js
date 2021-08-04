@@ -5,3 +5,8 @@ export const registerUser = (user)=>({
     payload: user
 })
 
+export const authenticateUser = (status)=>({
+    type: userTypes.AUTHENTICATE_USER,
+    payload: status
+})
+

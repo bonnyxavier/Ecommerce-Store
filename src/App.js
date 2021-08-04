@@ -15,12 +15,15 @@ import Navbar from './components/NavbarComponents/Navbar';
 import Test from './components/Test';
 import Checkout from './components/Checkout';
 import {useSelector} from 'react-redux'
+import ProtectedRoute from './components/ProtectedRoute';
+import Unauthorized from './components/Unauthorized';
 
 function App() {
 
   const [timedPopup, setTimedPopup] = useState(false);
-  const loginStatus = useSelector((state)=>state.loginStatusReducer)
-  console.log(loginStatus)
+
+  const user = useSelector((state)=>state.authenticateUserReducer.status);
+  console.log('USERSTATUS:',user)
 
   // useEffect(()=>{
   //   setTimeout(()=>{
@@ -48,7 +51,8 @@ function App() {
           <Route path="/signup" exact component = {SignUp}></Route>
           <Route path="/categories/mens" exact component = {MensCategory}></Route>
           <Route path="/categories/womens" exact component = {WomensCategory}></Route>
-          <Route path="/wishlist" exact component = {Wishlisted}></Route>
+          <ProtectedRoute path="/wishlist" exact component = {Wishlisted} user={user}></ProtectedRoute>
+          <Route exact path='/unauthorized' component={Unauthorized} />
           <Route path="/test" exact component = {Test}></Route>
           <Route path="/checkout" exact component = {Checkout}></Route>
     

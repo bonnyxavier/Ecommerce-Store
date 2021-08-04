@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { authenticateUser } from '../redux/User/user.actions';
 
 
 function Login() {
@@ -16,8 +17,9 @@ function Login() {
     }
 
     const userDetails = useSelector((state)=>state.userReducer.users)
-
+    
     const dispatch = useDispatch()
+
 
     
 
@@ -27,6 +29,7 @@ function Login() {
 
         if(loginUser.email == userDetails.email && loginUser.password == userDetails.password){
             alert("login success, you now have access to your wishlist")
+            dispatch(authenticateUser(true))
         }
         else{
             alert('incorrect details')
