@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 function Login() {
-    const updatedStatus = useSelector((state)=>state.loginStatusReducer)
-    const [loginStatus, setLoginStatus] = useState(false)
     const [loginUser, setLoginUser] = useState({
         email:"",
         password:"",
@@ -29,9 +27,6 @@ function Login() {
 
         if(loginUser.email == userDetails.email && loginUser.password == userDetails.password){
             alert("login success, you now have access to your wishlist")
-            setLoginStatus(true)
-            dispatch(setLoginStatus(loginStatus))
-            console.log(`Updated Status: ${updatedStatus}`)
         }
         else{
             alert('incorrect details')

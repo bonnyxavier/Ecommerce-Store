@@ -5,8 +5,3 @@ export const registerUser = (user)=>({
     payload: user
 })
 
-export const setLoginStatus = (status)=>({
-    type: userTypes.LOGIN_STATUS,
-    payload: status
-
-})
