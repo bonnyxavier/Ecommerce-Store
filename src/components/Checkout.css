@@ -1,0 +1,6 @@
+.address-form{
+    height:300px;
+    display: flex;
+  flex-direction: column;
+  width: 300px;
+}

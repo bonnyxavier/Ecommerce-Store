@@ -1,0 +1,44 @@
+
+
+.cart-table{
+    display: flex;
+
+}
+
+.cartDisplay{
+    display: block;
+    width: 100%;
+    color: dodgerblue;
+    align-items: left;
+}
+
+.checkout-options{
+    background-color: dodgerblue;
+    text-align: right;
+    text-decoration: none;
+
+}
+
+.checkOutBtn{
+    color: dodgerblue;
+    background-color: white;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.totalPrice{
+    color: white;
+    text-decoration: none;
+    margin:5px;
+    padding: 10px;
+}
+
+.checkOutBtn:hover{
+    color: white;
+    background-color: dodgerblue;
+}
+
+.checkOutBtn:active{
+    transform: scale(0.98);
+}

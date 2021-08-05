@@ -2,6 +2,7 @@ import React, { useState} from 'react'
 import {Link} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { registerUser } from '../redux/User/user.actions'
+
 function SignUp() {
     const [users, setUsers] = useState({
         fname:"",

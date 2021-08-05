@@ -8,6 +8,10 @@ const INITIAL_LOGIN_STATUS_STATE = {
     status: false
 }
 
+const INITIAL_ADDRESS_STATE = {
+    address: []
+}
+
 export const userReducer = (state=INITIAL_STATE,{type, payload})=>{
     switch(type){
         case userTypes.REGISTER_USER:
@@ -26,6 +30,16 @@ export const authenticateUserReducer = (state=INITIAL_LOGIN_STATUS_STATE,action)
             }
         
         default:
+            return state;
+    }
+}
+
+export const storeAddressReducer = (state=INITIAL_ADDRESS_STATE, action)=>{
+    switch(action.type){
+        case userTypes.STORE_USER_ADDRESS:
+            return{...state,address:action.payload }
+
+        default: 
             return state;
     }
 }

@@ -4,7 +4,11 @@ const INITIAL_STATE = {
     cartItems: []
 }
 
-const cartReducer = (state=INITIAL_STATE, action)=>{
+const TOTAL_PRICE = {
+    totalPrice: null
+}
+
+export const cartReducer = (state=INITIAL_STATE, action)=>{
     switch(action.type){
         case cartTypes.ADD_TO_CART:
             return{
@@ -23,6 +27,16 @@ const cartReducer = (state=INITIAL_STATE, action)=>{
     };
 }
 
+export const cartTotalPriceReducer = (state=TOTAL_PRICE, action)=>{
+    switch(action.type){
+        case cartTypes.UPDATE_TOTAL_PRICE:
+            return{
+                ...state,
+                totalPrice: action.payload
+            }
+        
+        default:
+            return state
+    }
+}
 
-
-export default cartReducer

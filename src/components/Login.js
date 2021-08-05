@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { authenticateUser } from '../redux/User/user.actions';
+import {Link} from 'react-router-dom'
 
 
 function Login() {
@@ -49,6 +50,7 @@ function Login() {
                 <br></br>
                 <br></br>
                 <button type="submit">Login</button>
+                <Link to='/signup'>Click here if you don't have an account.</Link>
                 <br></br>
             </div>
         </form>

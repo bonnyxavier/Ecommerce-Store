@@ -10,3 +10,8 @@ export const authenticateUser = (status)=>({
     payload: status
 })
 
+export const storeUserAddress = (address)=>({
+    type:userTypes.STORE_USER_ADDRESS,
+    payload: address
+})
+
